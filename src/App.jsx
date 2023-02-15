@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg';
-// import './App.css'
+import './App.css';
 
 function App() {
   const [usingName, setUsingName] = useState('');
@@ -71,9 +71,9 @@ function App() {
   function myPrint(myfrm) {
     var printdata = document.getElementById(myfrm);
     let newwin = window.open('');
-    newwin.document.write(
-      `<style>#title-1 {text-align: left; width: 50%} #title-2{text-align: left; width: 50%}</style>`
-    );
+    // newwin.document.write(
+    //   `<style>#title-1 {text-align: left; width: 50%} #title-2{text-align: left; width: 50%}</style>`
+    // );
     newwin.document.write(printdata.outerHTML);
     newwin.print();
     newwin.close();
@@ -116,7 +116,7 @@ function App() {
   //   document.body.removeChild(downloadLink);
   // }
   return (
-    <div id='App' className='flex h-screen flex-col py-2 px-10'>
+    <div id='App' className='flex h-screen flex-col py-2 px-2'>
       <table
         width={600}
         id='content'
@@ -130,16 +130,17 @@ function App() {
               <p>*</p>
             </td>
             <td
-              id='title-2'
               // align='right'
               // className='underline w-1/2 font-bold text-center'
               style={{
-                paddingLeft: '50px',
+                // paddingLeft: '100px',
                 textAlign: 'center',
-                width: '50%',
+                // width: '50%',
+                whiteSpace: 'nowrap',
                 verticalAlign: 'baseline',
                 textDecoration: 'underline',
                 fontWeight: 'bold',
+                textIndent: '250px',
               }}
             >
               ĐẢNG CỘNG SẢN VIỆT NAM
@@ -150,8 +151,14 @@ function App() {
           </tr>
           <br />
           <tr style={{ height: '20px' }}></tr>
-          <tr style={{ textAlign: 'center', fontWeight: 'bold' }}>
-            <td colSpan={'2'}>
+          <tr
+            style={{
+              textAlign: 'center',
+              fontWeight: 'bold',
+              paddingLeft: '50px',
+            }}
+          >
+            <td width={600} colSpan={2} style={{ textIndent: '50px' }}>
               <p>TRÍCH SAO</p>
               <p>Hồ sơ đề nghị kết nạp đảng viên</p>
               <p>thuộc Đảng bộ Khối Doanh nghiệp quận Thanh Xuân</p>
